@@ -8,17 +8,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700" rel="stylesheet">
 	<!-- Site favicon -->
-	<link rel="shortcut icon" href="{{ asset('login/images/favicon.ico') }}">
+	<link rel="shortcut icon" href="{{ asset('loginAsset/images/favicon.ico') }}">
 	<!-- Icon Font -->
-	<link rel="stylesheet" href="{{ asset('login/fonts/ionicons/css/ionicons.css') }}">
+	<link rel="stylesheet" href="{{ asset('loginAsset/fonts/ionicons/css/ionicons.css') }}">
 	<!-- Text Font -->
-	<link rel="stylesheet" href="{{ asset('login/fonts/font.css') }}">
+	<link rel="stylesheet" href="{{ asset('loginAsset/fonts/font.css') }}">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ asset('login/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('loginAsset/css/bootstrap.css') }}">
 	<!-- Normal style CSS -->
-	<link rel="stylesheet" href="{{ asset('login/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('loginAsset/css/style.css') }}">
 	<!-- Normal media CSS -->
-	<link rel="stylesheet" href="{{ asset('login/css/media.css') }}">
+	<link rel="stylesheet" href="{{ asset('loginAsset/css/media.css') }}">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 						<div class="login-slide slide">
 							<div class="d-flex height-100-percentage">
 								<div class="align-self-center width-100-percentage">
-									<form class="floating-form" autocomplete="off" method="POST" action="{{ route('loginku') }}">
+									<form class="floating-form" autocomplete="off" method="POST" action="{{ route('login') }}">
                                         @csrf
 										<div class="form-group">
 											<input type="text" name="NIP" class="form-control">
@@ -63,11 +63,11 @@
 
 	<div id="cd-loading-bar" data-scale="1" class="index"></div>
 	<!-- JS File -->
-	<script src="{{ asset('login/js/modernizr.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('login/js/jquery.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('login/js/popper.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('login/js/bootstrap.js') }}"></script>
-	<script src="{{ asset('login/js/velocity.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('login/js/script.js') }}"></script>
+	<script src="{{ asset('loginAsset/js/modernizr.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('loginAsset/js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('loginAsset/js/popper.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('loginAsset/js/bootstrap.js') }}"></script>
+	<script src="{{ asset('loginAsset/js/velocity.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('loginAsset/js/script.js') }}"></script>
 </body>
 </html>
