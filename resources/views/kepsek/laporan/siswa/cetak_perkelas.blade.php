@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laporan Siswa</title>
-    <link href="{{ asset('tabelPrint.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('tabelPrint.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
 <h3 style="text-align: center">Laporan Siswa @if ($tp_kd_kelas=='' && $thn=='' && $semester=='')
