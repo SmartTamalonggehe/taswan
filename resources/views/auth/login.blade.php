@@ -31,7 +31,7 @@
 						<div class="login-slide slide">
 							<div class="d-flex height-100-percentage">
 								<div class="align-self-center width-100-percentage">
-									<form class="floating-form" autocomplete="off" method="POST">
+									<form class="floating-form" autocomplete="off" method="POST" action="{{ route('loginku') }}">
                                         @csrf
 										<div class="form-group">
 											<input type="text" name="NIP" class="form-control">
