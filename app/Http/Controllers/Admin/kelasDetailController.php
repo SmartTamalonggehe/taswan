@@ -78,7 +78,7 @@ class kelasDetailController extends Controller
      */
     public function edit(kelasDetail $kelasDetail)
     {
-        return view('admin.kelasDetail.edit', [
+        return view('admin.KelasDetail.edit', [
             'kelasDetail' => $kelasDetail,
             'kelas' => kelas::orderBy('kd_kelas', 'ASC')->get(),
             'siswa' => siswa::orderBy('nm_siswa', 'ASC')->get(),
