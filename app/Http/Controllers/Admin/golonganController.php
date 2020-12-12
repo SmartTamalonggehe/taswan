@@ -15,8 +15,8 @@ class golonganController extends Controller
      */
     public function index()
     {
-        $golongan=golongan::all();
-        return view('admin.golongan.index',['golongan'=>$golongan]);
+        $golongan = golongan::whereNotIn('pangkat', ['ADMIN'])->get();
+        return view('admin.golongan.index', ['golongan' => $golongan]);
     }
 
     /**
@@ -37,20 +37,20 @@ class golonganController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'kd_gol'=>'required|unique:golongan',
-            'pangkat'=>'required',
-        ],[
-            'kd_gol.unique'=>'Kode Golongan Sudah ada',
+        $this->validate($request, [
+            'kd_gol' => 'required|unique:golongan',
+            'pangkat' => 'required',
+        ], [
+            'kd_gol.unique' => 'Kode Golongan Sudah ada',
         ]);
         $golongan = new golongan;
-        $golongan->kd_gol=$request->kd_gol;
-        $golongan->pangkat=$request->pangkat;
+        $golongan->kd_gol = $request->kd_gol;
+        $golongan->pangkat = $request->pangkat;
 
         $golongan->save();
 
         return redirect()->route('golongan.index')
-            ->with('success','Data Berhasil Ditambahkan');
+            ->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -72,8 +72,8 @@ class golonganController extends Controller
      */
     public function edit(golongan $golongan)
     {
-        return view('admin.golongan.edit',[
-            'golongan'=>$golongan,
+        return view('admin.golongan.edit', [
+            'golongan' => $golongan,
         ]);
     }
 
@@ -86,14 +86,14 @@ class golonganController extends Controller
      */
     public function update(Request $request, golongan $golongan)
     {
-        golongan::where('id',$golongan->id)
+        golongan::where('id', $golongan->id)
             ->update([
-                'kd_gol'=>$request->kd_gol,
-                'pangkat'=>$request->pangkat,
+                'kd_gol' => $request->kd_gol,
+                'pangkat' => $request->pangkat,
             ]);
 
         return redirect()->route('golongan.index')
-            ->with('success','Data Berhasil Diubah');
+            ->with('success', 'Data Berhasil Diubah');
     }
 
     /**

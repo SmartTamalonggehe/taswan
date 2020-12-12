@@ -30,7 +30,7 @@ class kelasDetailController extends Controller
      */
     public function create()
     {
-        return view('admin.kelasDetail.create', [
+        return view('admin.KelasDetail.create', [
             'kelas' => kelas::orderBy('kd_kelas', 'ASC')->get(),
             'siswa' => siswa::orderBy('nm_siswa', 'ASC')->get(),
         ]);

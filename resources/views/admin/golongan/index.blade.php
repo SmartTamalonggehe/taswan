@@ -61,7 +61,7 @@
 
 @section('skrip')
 
-
+<script src="{{ asset('sweetAlert/sweetalert2.js') }}"></script>
 {{-- Sweet alert Hapus --}}
 <script>
     $('button#delete').on('click',function(e){
