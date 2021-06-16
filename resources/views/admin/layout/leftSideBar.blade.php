@@ -3,7 +3,8 @@
         <div class="logo-src"></div>
         <div class="header__pane ml-auto">
             <div>
-                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                    data-class="closed-sidebar">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
@@ -54,8 +55,8 @@
                                 Golongan
                             </a>
                         </li>
-                        <li >
-                            <a href="{{ route('mkGol.index') }}"class="@yield('mkGol')">
+                        <li>
+                            <a href="{{ route('mkGol.index') }}" class="@yield('mkGol')">
                                 <i class="metismenu-icon"></i>
                                 Masa Kerja Golongan
                             </a>
@@ -74,7 +75,7 @@
                         </li>
                     </ul>
                 </li>
-                <li  >
+                <li>
                     <a href="{{ route('guru.index') }}" class="@yield('guru')">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         Guru
@@ -115,9 +116,9 @@
                 </li>
                 {{-- <li>
                     <a href="{{ route('nilai.index') }}" class="@yield('nilai')">
-                        <i class="metismenu-icon pe-7s-calculator"></i>
-                        Nilai
-                    </a>
+                <i class="metismenu-icon pe-7s-calculator"></i>
+                Nilai
+                </a>
                 </li> --}}
                 {{-- <li>
                     <a href="#">
@@ -128,69 +129,73 @@
                     <ul class="@yield('lg') @yield('ls')">
                         <li>
                             <a href="{{ route('laporanGuru') }}" class="@yield('lg')">
-                                <i class="metismenu-icon"></i>
-                                Guru
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('laporanSiswa') }}" class="@yield('ls')">
-                                <i class="metismenu-icon"></i>
-                                Siswa
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
+                <i class="metismenu-icon"></i>
+                Guru
+                </a>
+                </li>
                 <li>
-                    <a href="{{ route('User.index') }}" class="@yield('register')">
-                        <i class="metismenu-icon pe-7s-print"></i>
-                        Registrasi
+                    <a href="{{ route('laporanSiswa') }}" class="@yield('ls')">
+                        <i class="metismenu-icon"></i>
+                        Siswa
                     </a>
                 </li>
-                @endif
+            </ul>
+            </li> --}}
+            <li>
+                <a href="{{ route('User.index') }}" class="@yield('register')">
+                    <i class="metismenu-icon pe-7s-print"></i>
+                    Registrasi
+                </a>
+            </li>
+            @endif
 
 
-                {{-- Menu Guru --}}
-                @if (Auth::user()->getRoleNames()=='["guru"]')
-                <li class="app-sidebar__heading">Dashboard</li>
-                <li>
-                    <a href="{{ url('/guru') }}" class="@yield('Dashboard')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Master</li>
-                <li>
-                    <a href="{{ route('nilai.index') }}" class="@yield('nilai')">
-                        <i class="metismenu-icon pe-7s-calculator"></i>
-                        Nilai
-                    </a>
-                </li>
-                @endif
+            {{-- Menu Guru --}}
+            @if (Auth::user()->getRoleNames()=='["guru"]')
+            <li class="app-sidebar__heading">Dashboard</li>
+            <li>
+                <a href="{{ url('/guru') }}" class="@yield('Dashboard')">
+                    <i class="metismenu-icon pe-7s-rocket"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="app-sidebar__heading">Master</li>
+            <li>
+                <a href="{{ route('nilai.index') }}" class="@yield('nilai')">
+                    <i class="metismenu-icon pe-7s-calculator"></i>
+                    Nilai
+                </a>
+                <a href="{{ route('cetak') }}" class="@yield('cetak')">
+                    <i class="metismenu-icon pe-7s-calculator"></i>
+                    Raport
+                </a>
+            </li>
+            @endif
 
 
-                {{-- Menu Kepsek --}}
-                @if (Auth::user()->getRoleNames()=='["kepsek"]')
-                <li class="app-sidebar__heading">Dashboard</li>
-                <li>
-                    <a href="{{ url('/kepsek') }}" class="@yield('Dashboard')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Laporan</li>
-                <li>
-                    <a href="{{ route('laporanSiswa') }}" class="@yield('siswa')">
-                        <i class="metismenu-icon pe-7s-eyedropper">
-                        </i>Siswa
-                    </a>
-                </li>
-                <li  >
-                    <a href="{{ route('laporanGuru') }}" class="@yield('guru')">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Guru
-                    </a>
-                </li>
-                @endif
+            {{-- Menu Kepsek --}}
+            @if (Auth::user()->getRoleNames()=='["kepsek"]')
+            <li class="app-sidebar__heading">Dashboard</li>
+            <li>
+                <a href="{{ url('/kepsek') }}" class="@yield('Dashboard')">
+                    <i class="metismenu-icon pe-7s-rocket"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="app-sidebar__heading">Laporan</li>
+            <li>
+                <a href="{{ route('laporanSiswa') }}" class="@yield('siswa')">
+                    <i class="metismenu-icon pe-7s-eyedropper">
+                    </i>Siswa
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('laporanGuru') }}" class="@yield('guru')">
+                    <i class="metismenu-icon pe-7s-display2"></i>
+                    Guru
+                </a>
+            </li>
+            @endif
             </ul>
         </div>
     </div>
