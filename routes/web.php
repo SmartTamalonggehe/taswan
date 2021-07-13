@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/loginAdmin', function () {
+    return view('auth.loginAdmin');
+});
+
 
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-
